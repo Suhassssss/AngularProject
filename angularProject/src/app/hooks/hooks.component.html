@@ -1,0 +1,52 @@
+<div class="mainDiv">
+    <div class="firstDiv">
+    <div class="head">
+     <label class="lbl1">Choose framework & hit {{btnValue}} button to {{btnValue}} introduction</label>
+    <div class="dropBtn">
+        <select class="dropDown1" (change)="getOptionValue($event)">
+            <option value="default">Choose Framework</option>
+            <option value="Angular">Angular</option>
+            <option value="React">React</option>
+        </select>
+        <button class="btn1 btn btn-primary btn-sm"(click)="isShow()">
+            {{btnValue}}
+        </button>
+    </div>
+</div>
+<div class="content" >
+    <div class="content1" *ngIf="!isHide"  [ngSwitch]="selectedOption">
+        <p *ngSwitchDefault>Please Select Framework</p>
+        <p *ngSwitchCase="'Angular'"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Angular
+             is written in TypeScript. It implements core and optional functionality as a set of TypeScript libraries that you import into your applications..</p>
+        <p *ngSwitchCase="'React'">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”. We'll get to the funny
+             XML-like tags soon. We use components to tell React what we want to see on the screen.
+        </p>
+    </div>
+</div>
+</div>
+<div class="secondDiv">
+    <!-- <app-hook-child [clickEventValue]="clickEvent" [countValue]="countValue"></app-hook-child> -->
+    <div class="parentTable">
+        <table>
+            <tr>
+                <th>Count</th>
+                <th>Framework</th>
+                <th>Action</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+            <tr *ngFor="let e of event">
+                <td style="background-color:blue" [style.background-color]="countValue >= 5 ? 'blue' : 'rgb(70, 92, 14)'" class="parentTabletd">{{e[0]}}</td>
+                <td  style="background-color:blue" [style.background-color]="countValue >= 5 ? 'blue' : 'rgb(70, 92, 14)'" class="parentTabletd">{{e[1]}}</td>
+                <td  style="background-color:blue" [style.background-color]="countValue >= 5 ? 'blue' : 'rgb(70, 92, 14)'" class="parentTabletd">{{e[2]}}</td>
+                <td  style="background-color:blue" [style.background-color]="countValue >= 5 ? 'blue' : 'rgb(70, 92, 14)'" class="parentTabletd">{{e[3]}}</td>
+                <td  style="background-color:blue" [style.background-color]="countValue >= 5 ? 'blue' : 'rgb(70, 92, 14)'" class="parentTabletd">{{e[4]}}</td>
+            
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+

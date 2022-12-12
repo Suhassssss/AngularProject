@@ -1,0 +1,46 @@
+<div class="container">
+<div class="ngfor">
+<h1>{{title}}</h1>
+<table>
+    <thead><tr>
+        <th>Sr.No.</th>
+        <th>Qualification</th>
+        <th>College/University</th>
+        <th>Percentage</th>
+        <th>Passout Year</th>
+    </tr></thead>
+    <tbody>
+        <tr *ngFor="let edus of edu; let i = index;">
+            <td>{{i+1}}</td>
+            <td>{{edus.qualification}}.</td>
+            <td>{{edus.clg_university}}</td>
+            <td>{{edus.percentage}}</td>
+            <td>{{edus.passingYear}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="ngif">
+    <label>Read More...</label><input type="checkbox" (click)="isChecked()">
+    <p *ngIf="isShow"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Angular 8 is a client-side TypeScript based, front-end web framework by Google.  Angular 8 is a great, reusable UI
+        (User Interface) library for the developers which help in building attractive, steady, and utilitarian web pages and
+        web application. Angular 8 is a ground-breaking JavaScript framework which makes us able to create an attractive
+        Single Page Application(SPAs). Its first version was released in 2012 and named as AngularJS.</p>
+</div>
+<div class="ngswitch">
+    <select (change)="getOptionValue($event)">
+        <option value="default">Select Option</option>
+        <option value="option1">Option1</option>
+        <option value="option2">Option2</option>
+        <option value="option3">Option3</option>
+        <option value="option4">Option4</option>
+    </select>
+</div>
+<div class="ngswitchcase" [ngSwitch]="selectedOption">
+    <h2 *ngSwitchDefault>This is default</h2>
+    <h2 *ngSwitchCase="'option1'">Option 1 is selected</h2>
+    <h2 *ngSwitchCase="'option2'">Option 2 is selected</h2>
+    <h2 *ngSwitchCase="'option3'">Option 3 is selected</h2>
+    <h2 *ngSwitchCase="'option4'">Option 4 is selected</h2>
+</div>
+</div>

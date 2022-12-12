@@ -1,0 +1,52 @@
+.body{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: linear-gradient(rgba(13, 0, 255, 0.131), rgba(255, 0, 221, 0.148)), url(src/assets/college1.jpg);
+    background-color: rgba(0, 0, 0, 0.903);
+    /* filter: blur(3px); */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.formClass{
+    background-color: rgba(0, 0, 0, 0.350);
+    margin-left: 150px;
+    color: white;
+    margin-top: 30px;
+}
+.text-err{
+    color: rgb(255, 0, 0);
+    text-shadow: 1px 1px 5px black;
+}
+.dataClass{
+    /* background-image: linear-gradient(to top, rgba(13, 0, 255, 0.386), rgba(255, 0, 221, 0.328)); */
+    background-color: rgba(0, 0, 0, 0.350);
+    margin-left: 150px;
+    padding-left: 100px;
+    color: rgb(0, 0, 0);
+    margin-top: 30px;
+}
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+    box-shadow: 0 0 9px inset red;
+}
+.table td{
+    font-size: 18px;
+}
+.table td button{
+    background-color: rgb(0, 30, 255);
+    margin-left: 40px;
+    margin-top: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+}
+.table td button:hover{
+    background-color: rgb(0, 0, 194);
+}
+input[type=text].ng-valid.ng-touched, input[type=email].ng-valid.ng-touched, input[type=number].ng-valid.ng-touched, input[type=date].ng-valid.ng-touched{
+    border: 1px solid rgb(64, 255, 0);
+    box-shadow: 0 0 9px inset rgb(47, 255, 0);
+}

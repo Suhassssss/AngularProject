@@ -1,0 +1,62 @@
+  <!-- <div class="childTable">
+        <table>
+            <tr>
+                <th>Employee Id</th>
+                <th>Employee Name</th>
+                <th>Employee Department</th>
+                <th>Employee Salary</th>
+                <th>Employee Company</th>
+            </tr>
+            <tr *ngFor="let employee of emp1">
+                <td>{{employee.empId}}</td>
+                <td>{{employee.empName}}</td>
+                <td>{{employee.empDept}}</td>
+                <td>{{employee.empSalary}}</td>
+                <td>{{employee.empCompany}}</td>
+            </tr>
+        </table>
+    </div>
+    <p>Enter Food name</p> -->
+    <!-- step1 usr entering food value -->
+    <!-- <input type="text" [(ngModel)]="txt" (keyup.enter)="addToFood(item.value)" (keyup.shift.enter)="reset()" #item> -->
+    <div class="dataInput">
+        <div class="inputHead">
+            <span class="bikeImg"><img src="assets/bike1.png" alt="Bike" width="90px" height="90px"></span>
+            <span class="head">Bike and Car Washing Centre</span>
+            <span class="carImg"><img src="assets/car1.png" alt="Bike" width="130px" height="80px"></span>
+        </div>
+        <table>
+            <tr>
+                <td class="tdlbl"><label>Customer Name: </label></td>
+                <td class="tdinput"><input type="text" [(ngModel)]="custName" #a></td>
+            </tr>
+            <tr>
+                <td class="tdlbl"><label>Mobile No: </label></td>
+                <td class="tdinput"><input type="text" [(ngModel)]="custMobile" #b></td>
+            </tr>
+            <tr>
+                <td class="tdlbl"><label>Vehicle Name: </label></td>
+                <td class="tdinput"><input type="text" [(ngModel)]="custVehicle" #c></td>
+            </tr>
+            <tr>
+                <td class="tdlbl"><label>Vehicle Type: </label></td>
+                <td class="tdinput"><select #d>
+                    <option value="Bike">Bike</option>
+                    <option value="Car">Car</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td class="tdlbl"><label>Vehicle No: </label></td>
+                <td class="tdinput"><input type="text" [(ngModel)]="custVehiNum" #e></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class="btnreset" [disabled]="custName=='' && custMobile=='' && custVehicle=='' && custVehiNum==''" (click)="reset()">Reset</button>
+                    <button class="btnadd" [disabled]="custName=='' || custMobile=='' || custVehicle=='' || custVehiNum==''" (click)="addCustomer(a.value,b.value,c.value,d.value,e.value)">Add Customer</button>
+                </td>
+            </tr>
+
+        </table>
+    
+    
+</div>

@@ -1,0 +1,92 @@
+.mainDiv{
+    width: 100vw;
+    height: 100vh;
+    padding-left: 1vw;
+    padding-right: 1.5vw;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+}
+.firstDiv{
+    position: absolute;
+    width: 46vw;
+    height: 95vh;
+}
+.secondDiv{
+    position: absolute;
+    margin-left: 47vw;
+    width: 46vw;
+    height: 95vh;
+}
+.head{
+    width: 46vw;
+    height: 14vh;
+    background-color: rgb(16, 46, 2);
+    border-radius: 10px 10px 0px 0px;
+}
+.content{
+    position: absolute;
+    margin-top: 0px;
+    width: 46vw;
+    height: 35vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(60, 119, 32);
+    border-radius: 0px 0px 10px 10px;
+}
+.content1 p{
+    color: rgb(221, 255, 170);
+    font-size: 18px; 
+    margin-top: 20px;
+}
+.lbl1{
+    position: absolute;
+    margin-left: 1vw;
+    color: rgb(154, 246, 15);
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.dropBtn{
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 150px;
+}
+.dropDown1{
+    width: 170px;
+    height: 34px;
+    border-radius: 6px 6px 6px 6px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+.btn1{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    font-size: 20px;
+    margin-top: -5px;
+    margin-left: 20px;
+}
+.parentTable{
+    text-align: center;
+    background-color: rgb(29, 40, 0);
+    border-radius: 10px 10px 0px 0px;
+    width: 700px;
+}
+.parentTable table{
+    width: 700px;
+}
+.parentTable table tr{
+    border-bottom: 1px solid silver;
+}
+.parentTable table tr th{
+    padding-top: 5px;
+    padding-bottom: 8px;
+    color: yellow;
+} 
+.parentTable table tr td{
+padding-top: 5px;
+padding-bottom: 8px;
+color: white;
+background-color: rgb(70, 92, 14);
+} 

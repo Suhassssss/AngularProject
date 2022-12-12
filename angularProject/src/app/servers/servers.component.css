@@ -1,0 +1,50 @@
+div{
+    width: 452px;
+    height: 270px;
+    margin-left: 100px;
+    margin-top: 10px;
+    border: 2px solid rgb(255, 22, 247);
+    border-top: none;
+    border-radius: 65px 0px 65px 0px;
+    background-color: rgb(255, 200, 253);
+}
+hr{
+    height: 2px;
+    background-color: rgb(255, 141, 251);
+}
+h1{
+    background-color: rgb(255, 22, 247);
+    padding-left: 30px;
+    border-radius: 60px 0px 60px 0px;
+    height: 70px;
+    margin: 0px;
+    line-height: 60px;
+    width: 450px;
+}
+h2{
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+span{
+    font-size: 30px;
+    font-style: italic;
+    
+    margin-top: 70px;
+}
+input{
+    margin-top: 10px;
+    margin-left: 70px;
+    font-size: large;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 30px;
+    width: 300px;
+}
+button{
+    margin-left: 170px;
+    margin-top: 5px;
+    font-size: 17px;
+    height: 30px;
+    width: 80px;
+}

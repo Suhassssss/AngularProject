@@ -1,0 +1,70 @@
+.mainDiv{
+    background: linear-gradient(rgba(0, 0, 0, 0.086), rgba(0, 0, 0, 0.078)), url(src/assets/tourImg2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+.headDiv{
+    width: 40vw;
+    height: 20vh;
+    text-align: right;
+}
+.trvllogo{
+    position: absolute;
+    align-self: flex-end;
+    
+}
+.inputPlaces{
+    position: absolute;
+    margin-left: 70vw;
+    margin-top: -15vh;
+    width: 30vw;
+    height: 30vh;
+}
+.inputPlaces label{
+    position: absolute;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-family: mv boli;
+}
+.inputPlaces input{
+    margin-top: 8vh;
+    height: 6vh;
+    width: 15vw;
+    padding-left: 15px;
+    border: 1px solid grey;
+    border-radius: 6px 6px 6px 6px;
+}
+.addbtn{
+    background-color: rgb(31, 31, 255);
+    margin-top: -5px;
+    margin-left: 5px;
+    border: 1px solid rgb(109, 138, 255);
+}
+.removebtn{
+    background-color: rgb(242, 0, 0);
+    height: 30px;
+    line-height: 10px;
+    border: 1px solid rgb(255, 80, 80);
+}
+.tableData{
+    width: 30vw;
+    margin-left: 39vw;
+    margin-top: 10vh;
+    
+    text-align: center;
+}
+.tableData .table tr th{
+    border-bottom: 1px solid white;
+    height: 35px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(0, 8, 161, 0.396);
+}
+ .tableData .table tr td{
+    border-bottom: 1px solid white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: white;
+    background-color: rgba(46, 55, 225, 0.375);
+}

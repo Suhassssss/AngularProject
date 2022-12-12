@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded py-5">
+            <form [formGroup]="myReactiveForm" (ngSubmit)="OnSubmit()">
+                <input type="text" formControlName="username" id="username" placeholder="Username">
+                <br><br>
+                <input type="text" formControlName="email" id="email" placeholder="email"><br><br>
+                <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- 
+<form #userRegistrationForm="ngForm" (ngSubmit)="submit(userRegistrationForm)">
+
+	<div class="form-group">
+		<label>Name:</label>
+		<input type="text" name="name" class="form-control" [(ngModel)]="user.name" #nameRef="ngModel" required/>
+		<div *ngIf="(nameRef.invalid && nameRef.touched) || nameRef.dirty">
+			<small *ngIf="nameRef.errors?.required" class="text-danger">Name is required</small>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label>Email:</label>
+		<input type="email" name="email"  class="form-control" [(ngModel)]="user.email" pattern="^[a-z0-9._%+-]+@+codemind+\.[a-z]{2,4}$" #emailRef="ngModel" required />
+		<div *ngIf="(emailRef.invalid && emailRef.touched) || emailRef.dirty">
+			<small class="text-danger" *ngIf="emailRef.errors?.required">Email address is required</small>
+			<small class="text-danger" *ngIf="emailRef.errors?.pattern">Email address is invalid</small>
+		</div>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-primary" type="submit">Save</button>
+	</div>
+
+</form> -->
+
+
+
+
+
+
+
+

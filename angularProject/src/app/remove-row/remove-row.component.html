@@ -1,0 +1,26 @@
+<div class="mainDiv">
+    <div class="headDiv">
+        <img class="trvllogo" src="assets/travellogo.png" alt="travellogo" height="170px" width="350px">
+    </div>
+<div class="inputPlaces">
+<label>Add places to visit</label>
+<input type="text" placeholder="Add places" [(ngModel)]="place">
+<button class="btn btn-primary addbtn" (click)="addPlace()">Add</button>
+</div>
+<div class="tableData">
+<table class="table" *ngIf="places.length>0">
+    <tr>
+        <th style="border-radius: 10px 0px 0px 0px;">Sr.No.</th>
+        <th>Places</th>
+        <th style="border-radius: 0px 10px 0px 0px;">Action</th>
+    </tr>
+    <tr *ngFor="let p of places, let i = index">
+        <td>{{i+1}}</td>
+        <td>{{p}}</td>
+        <td>
+            <button class="btn btn-danger removebtn" [value]="i" (click)="removePlace($event)">Remove</button>
+        </td>
+    </tr>
+</table>
+</div>
+</div>

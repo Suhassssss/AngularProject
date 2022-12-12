@@ -1,0 +1,58 @@
+<!-- <div [ngStyle]="{'background-color': colorVal, 'color':'blue'}">
+    Learning Angular 8
+</div> -->
+<!-- <h4 >Ng Class</h4>
+<ul *ngFor="let person of people">
+    <li [ngClass]="{
+        'text-success': person.country === 'UK',
+        'text-primary': person.country === 'USA',
+        'text-danger' person.country === 'HK'
+    }">{{person.name}} ({{person.country}})</li>
+</ul> -->
+<!-- <h4>Ng Class</h4>
+
+<ul *ngFor="let person of people">
+    <li [ngClass]="{
+        'text-success': person.country === 'UK',
+        'text-primary': person.country === 'USA',
+        'text-danger': person.country === 'HK'
+    }">
+ 
+     {{person.name}} ({{person.country}})
+    </li>
+</ul>
+<p>Normal Para</p>
+<p appCustdir>Custom directive Para</p>
+<div appCustdir>Custom directive div</div> -->
+
+    <table>
+        <tbody>
+            <tr>
+                <td><label>Password:</label></td>
+                <td><input type="text" [(ngModel)]  = "password"></td>
+            </tr>
+            <tr>
+                <td><label>Confirm Password:</label></td>
+                <td><input type="text" [(ngModel)]  = "cnfrmPassword"></td>
+                <td colspan="2" appCustmdir>{{msg}}</td>
+            </tr>
+            <tr>
+                
+            </tr>
+            <tr>
+                <td><input type="reset" value="Reset"></td>
+                <td><input type="submit" value="Submit" [disabled]="password==''" (click)="isPassMatched()"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+    <input type="text" [(ngModel)]="txt"  #txtInput (keyup)="getInputValue(txtInput.value)">
+    <button  (click)="getInputValue(txtInput.value)">Show</button>
+    <p style="display: inline">{{textInput}}</p>
+    <button class="btn btn-danger" (click)="newHookExists()">Destroy</button>
+    <!-- <app-directives [myinputMsg]="textInput"></app-directives> -->
+    <app-newhooks *ngIf="newHookExist" [myinputMsg]="txt" (myEvent)="getDataFromChild($event)"> 
+        <h2 #attrih2 >attri content</h2>
+        <p #para>paragraph</p>
+    </app-newhooks>
+    

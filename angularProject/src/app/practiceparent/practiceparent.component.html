@@ -1,0 +1,20 @@
+<app-practicechild [parentComp]="name" (eduEvent)="getChildData($event)"></app-practicechild>
+<table class="table">
+    <tr>
+        <th>Sr.No.</th>
+        <th>Qualification</th>
+        <th>Clg/University</th>
+        <th>Percentage</th>
+        <th>Passing Year</th>
+    </tr>
+    <tr *ngFor="let edu of education1, let i = index">
+        <td>{{i+1}}</td>
+        <td>{{edu.qualification}}</td>
+        <td>{{edu.clg_university}}</td>
+        <td>{{edu.percentage}}</td>
+        <td>{{edu.passingYear}}</td>
+        <td>
+            <button [value]="i"(click)="remove($event)">Remove</button>
+        </td>
+    </tr>
+</table>

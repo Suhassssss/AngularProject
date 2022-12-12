@@ -1,0 +1,70 @@
+<div class="body">
+</div>
+<div class="container">
+    <div class="row text-left">
+        <div class="col-md-3">
+        <img class="logo" src="assets/codemindLogo.png" height="200px" width="270px" alt="codemindtechnology">
+    </div>
+    <div class="col-md-9">
+        <h1 class="tagLine"style="margin-top: 20px">CodeMind &nbsp;Subscription &nbsp;Form</h1>
+        <h1 class="tagLine" style="margin-left: 55px; margin-top: 20px">& &nbsp;&nbsp;&nbsp;&nbsp;CodeMind &nbsp;Subscriptions</h1>
+    </div>
+    </div>
+    <div class="row" style="margin-top: -20px;">
+        <div class="col-md-4">
+            <form #subscriptionForm="ngForm" class="subsForm" (ngSubmit)="onSubmit(subscriptionForm)">
+                <div class="form-group">
+                    <label class="form-label">Name: </label>
+                    <input class="form-control" type="text" id="name" name="name" #nameRef="ngModel" placeholder="Enter your name" [(ngModel)]="name" ngModel required>
+                    <div *ngIf="(nameRef.invalid && nameRef.touched) || nameRef.dirty">
+                        <small *ngIf="nameRef.errors?.required" class="text-danger">Name is required</small>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email: </label>
+                    <input class="form-control" type="email" email id="email" name="email" #emailRef="ngModel" placeholder="Enter your email" pattern="^[a-z0-9._%+-]+@+[a-z]+\.[a-z]{2,4}$" [(ngModel)]="email" ngModel required>
+                    <div *ngIf="(emailRef.invalid && emailRef.touched) || emailRef.dirty">
+                        <small class="text-danger" *ngIf="emailRef.errors?.required">Email address is required</small>
+                        <small class="text-danger" *ngIf="emailRef.errors?.pattern">Email address is invalid</small>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password: </label>
+                    <input class="form-control" type="password" id="password" name="password" #passwordRef="ngModel" placeholder="Enter password" [(ngModel)]="password" ngModel required>
+                    <div *ngIf="(passwordRef.invalid && passwordRef.touched) || passwordRef.dirty">
+                        <small *ngIf="passwordRef.errors?.required" class="text-danger">Password is required</small>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label for="subscriptionType">Select Course</label>
+                    <select class="form-control" name="subscriptionType" id="subscriptionType" [ngModel]="defaultValue">
+                        <option value="Basic">Basic</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="Pro">Pro</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button class="btn btn-success" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-6" *ngIf="submitted">
+            <table class="table text-center">
+                <tr>
+                    <th>Sr.No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subscription</th>
+                </tr>
+                <tr *ngFor="let data of formData, let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.subscription}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

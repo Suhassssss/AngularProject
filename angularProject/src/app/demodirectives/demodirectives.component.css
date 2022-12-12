@@ -1,0 +1,89 @@
+.firstdiv{
+    border: 2px solid rgb(141, 140, 140);
+    width: 625px;
+    height: 600px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    position: absolute;
+    border-radius: 10px 10px 10px 10px;
+}
+.chekbxParaDiv .chekbxPara{
+    color: rgb(229, 229, 188);
+    margin-top: 10px;
+    padding-left: 10px;
+}
+.tblTitle{
+    color:rgb(216, 219, 25);
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+}
+.selectDefault{
+    position: absolute; 
+    width: 350px; color: rgb(175, 149, 2); 
+    height: 100px; 
+}
+.headhr{
+    position: absolute;
+    margin-top: 16px;
+    margin-left: 320px;
+    height: 90px;
+    width: 1px;
+    border-right: 1px solid rgb(97, 97, 97);
+}
+.trHead{
+    color: rgb(158, 216, 0);
+    font-size: 20px;
+    text-align: center;
+}
+.tbldiv{
+    margin-top: 50px;
+}
+table{
+    margin-top: 20px;
+}
+.table tr td{
+    color:aliceblue
+}
+.table tr{
+    text-align: center;
+}
+.seconddiv{
+    border: 2px solid rgb(141, 140, 140);
+    width: 625px;
+    height: 600px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    position: absolute;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 650px;
+}
+.lblCheck{
+    color: rgb(212, 199, 4);
+    font-weight: bold;
+    font-size: 20px;
+    font-family: mv boli;
+    margin-left: 10px;
+}
+.actorGallary{
+    position: absolute;
+    margin-top: 170px;
+}
+.actorGallary .nameActor{
+    position: absolute;
+    margin-left: 310px;
+    font-size: 50px;
+    width: 300px;
+}
+.actorGallary .imgActor{
+    position: absolute;
+
+}
+.actorGallary h2{
+    margin-top: 130px;
+    margin-left: 40px;
+    text-align: center;
+    color: rgb(85, 209, 3);
+}

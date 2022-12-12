@@ -1,0 +1,70 @@
+<div class="firstdiv">
+    <div class="chkbxDiv">
+        <input type="checkbox" (click)="isChecked()"><label class="lblCheck">click here to read about Angular 8</label>
+        <div class="chekbxParaDiv" *ngIf="isShow">
+            <p class="chekbxPara">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Angular 8 is a
+                client-side TypeScript based, front-end web framework by Google. Angular 8 is a great, reusable UI
+                (User Interface) library for the developers which help in building attractive, steady, and utilitarian
+                web pages and
+                web application. Angular 8 is a ground-breaking JavaScript framework which makes us able to create an
+                attractive
+                Single Page Application(SPAs). Its first version was released in 2012 and named as AngularJS.</p>
+        </div>
+    </div>
+    <div class="tbldiv">
+        <h1 class="tblTitle">{{title}}</h1>
+        <table class="table">
+            <thead>
+                <tr class="trHead">
+                    <th>Course</th>
+                    <th>Fees</th>
+                    <th>Duration</th>
+                    <th>Freshers Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let courses of courses">
+                    <td>{{courses.course}}</td>
+                    <td>{{courses.fees}}</td>
+                    <td>{{courses.duration}}</td>
+                    <td>{{courses.salary}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="seconddiv">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <select style="position: absolute; margin-left: 380px; margin-top: 5px; width: 170px;"
+                    class="form-control" (change)="getActorValue($event)">
+                    <option value="Default">Select Actor</option>
+                    <option value="Hrithik_Roshan">Hrithik Roshan</option>
+                    <option value="Mahesh_Babu">Mahesh Babu</option>
+                    <option value="Shahrukh_Khan">Shahrukh Khan</option>
+                </select>
+            </div>
+            <div class="headhr"></div>
+            <div class="col-md-12" [ngSwitch]="selectedActor">
+                <h2 class="selectDefault">Please select your favourite actor to see photo!</h2>
+                <div class="actorGallary" *ngSwitchDefault>
+                    <h2>You have not seleced any actor!</h2>
+                </div>
+                <div class="actorGallary" *ngSwitchCase="'Hrithik_Roshan'">
+                    <img class="imgActor" src="assets/hrithik.png" alt="Hrithik Roshan" height="350px" width="320px">
+                    <h2 class="nameActor">Hrithik <br> Roshan</h2>
+                </div>
+                <div class="actorGallary" *ngSwitchCase="'Mahesh_Babu'">
+                    <img class="imgActor" src="{{mahesh}}" alt="Mahesh Babu" height="350px" width="350px">
+                    <h2 class="nameActor">Mahesh <br> Babu</h2>
+                </div>
+                <div class="actorGallary" *ngSwitchCase="'Shahrukh_Khan'">
+                    <img class="imgActor" src="{{shahrukh1}}" alt="Shahrukh Khan" height="350px" width="300px">
+                    <h2 class="nameActor">Shah Rukh <br> Khan</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

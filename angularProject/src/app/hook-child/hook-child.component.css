@@ -1,0 +1,23 @@
+.parentTable{
+    text-align: center;
+    background-color: rgb(29, 40, 0);
+    border-radius: 10px 10px 0px 0px;
+    width: 700px;
+}
+.parentTable table{
+    width: 700px;
+}
+.parentTable table tr{
+    border-bottom: 1px solid silver;
+}
+.parentTable table tr th{
+    padding-top: 5px;
+    padding-bottom: 8px;
+    color: yellow;
+} 
+.parentTable table tr td{
+padding-top: 5px;
+padding-bottom: 8px;
+color: white;
+background-color: rgb(70, 92, 14);
+} 
