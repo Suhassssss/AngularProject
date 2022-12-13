@@ -1,6 +1,6 @@
 export class Student{
-    course: string;
     username: string;
     email: string;
+    course: string;
     gender: string;
 }

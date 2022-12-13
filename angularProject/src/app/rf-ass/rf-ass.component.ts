@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Student } from '../models/student' ;
 
 @Component({
-  selector: 'app-reactiveform',
-  templateUrl: './reactiveform.component.html',
-  styleUrls: ['./reactiveform.component.css']
+  selector: 'app-rf-ass',
+  templateUrl: './rf-ass.component.html',
+  styleUrls: ['./rf-ass.component.css']
 })
-export class ReactiveformComponent implements OnInit {
+export class RfAssComponent implements OnInit {
+
+ 
   myReactiveForm: FormGroup;
   constructor(){
     this.createForm();
@@ -24,13 +26,13 @@ export class ReactiveformComponent implements OnInit {
       'gender': new FormControl('Male')
     })
   }
-  notAllowedNames = ['Codemind', 'Technology'];
+  notAllowedNames: any[] = [];
   genders = [
         {id: '1', value: 'Male'},
         {id: '2', value: 'Female'},
         {id: '3', value: 'Other'}
       ];
-  
+  formData: Student[]=[];
   NaNames(controls:FormControl){
     this.enteredName= controls.value;
     if(this.notAllowedNames.indexOf(controls.value) !== -1){
@@ -41,7 +43,13 @@ export class ReactiveformComponent implements OnInit {
    
   }
   OnSubmit(){
+
+    this.notAllowedNames.push(this.myReactiveForm.value.username);
+    this.formData.push({username: this.myReactiveForm.value.username, email: this.myReactiveForm.value.email, course: this.myReactiveForm.value.course, gender: this.myReactiveForm.value.gender});
     console.log(this.myReactiveForm);
+    this.myReactiveForm.reset();
+    this.myReactiveForm.controls['course'].setValue('Angular');
+    this.myReactiveForm.controls['gender'].setValue('Male');
     
   }
   // user: any = { name: "", email: "" };
