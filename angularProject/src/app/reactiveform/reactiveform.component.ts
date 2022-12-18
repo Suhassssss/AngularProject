@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-reactiveform',
@@ -13,16 +13,44 @@ export class ReactiveformComponent implements OnInit {
     this.createForm();
   }
   enteredName: string;
-  ngOnInit(): void {
+  ngOnInit(){
     // throw new Error('Method not implemented.');
-  }
+    // setTimeout(() => {
+    //   this.myReactiveForm.setValue({
+    //     'userDetails': {
+    //       'username': 'Codemind1122',
+    //       'email': 'test@gmail.com'
+    //     },
+    //     'course': 'HTML',
+    //     'gender': 'Male'
+    //   })
+    // }, 1500);
+  
+  // setTimeout(() => {
+  //   this.myReactiveForm.patchValue({
+  //     'userDetails': {
+  //       'username': 'Codemind1122',
+  //       'email': 'test@gmail.com'
+  //     }
+  //   })
+  // }, 1500);
+}
+submitted: boolean = false;
   createForm(){
     this.myReactiveForm = new FormGroup({
+      'userDetails': new FormGroup({
       'username': new FormControl('',[Validators.required, this.NaNames.bind(this)]),
-      'email': new FormControl('',[Validators.required, Validators.email]),
+      'email': new FormControl('',[Validators.required, Validators.email], this.NaEmails)
+    }),
       'course': new FormControl('Angular'),
-      'gender': new FormControl('Male')
+      'gender': new FormControl('Male'),
+      'skills': new FormArray([
+        new FormControl(null, Validators.required)
+      ])
     })
+  }
+  OnAddSkills(){
+    (<FormArray>this.myReactiveForm.get('skills')).push(new FormControl(null));
   }
   notAllowedNames = ['Codemind', 'Technology'];
   genders = [
@@ -40,9 +68,25 @@ export class ReactiveformComponent implements OnInit {
     return null;
    
   }
+  NaEmails(controls:FormControl): Promise<any> | Observable<any> {
+    const myResponse = new Promise<any>((resolve,reject)=>{
+      setTimeout(()=>{
+        if(controls.value === 'codemindtechnology@gmail.com'){
+          resolve({'emailNotAllowed': true});
+        }else{
+          resolve(null)
+        }
+
+      }, 100);
+    })
+    return myResponse;
+  }
   OnSubmit(){
     console.log(this.myReactiveForm);
-    
+    this.submitted = true;
+  }
+  back(){
+    this.submitted = false;
   }
   // user: any = { name: "", email: "" };
 

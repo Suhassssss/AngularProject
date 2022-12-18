@@ -1,0 +1,153 @@
+<div class="body"></div>
+<div class="row mainRow pt-2">
+    <div class="col-md-6 colMain ">
+        <form #myTemplateForm="ngForm" (ngSubmit)="submitTF(myTemplateForm)">
+            <h2 class="formHead">Template Driven Form</h2>
+            <div class="formData">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label class="row form-label text-white">First Name:</label>
+                        <input class="row form-control" style="height: 5vh;" placeholder="First name" type="text" name="firstName" #firstNameRef="ngModel" minlength="5" pattern="^[a-zA-Z]{5}$" ngModel required>
+                        <small class="row text-danger mt-1" *ngIf="firstNameRef.errors?.required && firstNameRef.touched">*First name should not be empty!</small>
+                        <small class="row text-danger mt-1" *ngIf="firstNameRef.errors?.pattern && firstNameRef.touched">*First name should 5 characters!</small>
+                    </div>
+                    <div class="row col-md-6 form-group">
+                        <label class="row form-label text-white">Last Name:</label>
+                        <input class="row form-control" style="height: 5vh;" placeholder="Last name" type="text" name="lastName" #lastNameRef="ngModel" pattern="^[a-zA-Z]{0,1}[a-zA-Z]{0,1}[a-zA-Z]{0,1}[a-zA-Z]{0,1}[a-zA-Z]{0,1}[a-zA-Z]{0,1}[a-zA-Z]{0,1}[a-zA-Z]{0,1}[a-zA-Z]{0,1}[a-zA-Z]{0,1}$" ngModel required>
+                        <small class="row text-danger mt-1" *ngIf="lastNameRef.errors?.required && lastNameRef.touched">*Last name should not be empty!</small>
+                        <small class="row text-danger mt-1" *ngIf="lastNameRef.errors?.pattern && lastNameRef.touched">*Last name should max 10 characters!</small>
+                    </div>
+                </div>
+               <div class="row">
+                    <div class="form-group col-md-7">
+                        <label class="form-label text-white mt-2" style="margin-left: -0.6vw;">Email:</label>
+                        <input class="form-control" style="height: 5vh; margin-left: -0.6vw;" type="email" placeholder="Enter email..." email name="email" #emailRef="ngModel" ngModel required>
+                        <small class="text-danger mt-1" *ngIf="emailRef.errors?.required && emailRef.touched" style="margin-left: 0.2vw;">*Email should not be empty!</small>
+                        <small class="text-danger mt-1" *ngIf="emailRef.errors?.email && emailRef.touched" style="margin-left: 0.2vw;">*Please enter valid email!</small>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label class="form-label text-white mt-2" style="">Age:</label>
+                        <input class="form-control" style="height: 5vh; width: 10vw;" type="number" placeholder="Enter age..." name="age" #ageRef="ngModel" pattern="^(17|18|19|20)$" ngModel required>
+                        <small class="text-danger mt-1" *ngIf="ageRef.errors?.required && ageRef.touched" style="margin-left: 0.2vw;">*Age should not be empty!</small>
+                        <small class="text-danger mt-1" *ngIf="ageRef.errors?.pattern && ageRef.touched" style="margin-left: 0.2vw;">*Age should between 17-20!</small>
+                    </div>
+               </div>
+               <div class="row">
+                <div class="form-group col-md-7">
+                    <label class="form-label text-white mt-2" style="margin-left: -0.6vw;">Mobile No:</label>
+                    <input class="form-control" style="height: 5vh; margin-left: -0.6vw;" type="number" placeholder="Enter mobile number..." name="mobile" pattern="^(\d\d\d\d\d\d\d\d\d\d)$" #mobileRef="ngModel" ngModel required>
+                    <small class="text-danger mt-1" *ngIf="mobileRef.errors?.required && mobileRef.touched" style="margin-left: 0.2vw;">*Mobile number should not be empty!</small>
+                    <small class="text-danger mt-1" *ngIf="mobileRef.errors?.pattern && mobileRef.touched" style="margin-left: 0.2vw;">*Mb.No. should be maximum 10 numbers!</small>
+                </div>
+                <div class="form-group col-md-5">
+                        <label for="city" class="form-label text-white mt-2">City:</label>
+                        <select class="form-control" style="height: 5vh; width: 10vw; line-height: 2vh;" name="city" id="city" [ngModel]="stDefaultCity">
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Delhi">Delhi</option>
+                        </select>
+                </div>
+                </div>
+                <div class="form-group row">
+                    <label class="form-label text-white mt-2 col-md-3" style="margin-left: -0.6vw;">Gender:</label>
+                    <div *ngFor="let gender of genders" class="custom-control custom-radio col-md-2 mt-2">
+                       <input type="radio" id="{{gender.id}}" name="gender" value="{{gender.value}}" class="custom-control-input" style="margin-top: 1vh;" [ngModel]="stDefaultGender" ngModel required>
+                       <label for="{{gender.id}}" class="custom-control-label text-white">&nbsp;{{gender.value}}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label class="form-label text-white mt-2" style="margin-left: -0.6vw;">Password:</label>
+                        <input class="form-control" style="height: 5vh; width: 20vw; margin-left: -0.6vw;" type="password" placeholder="Enter password..." name="password" #passRef="ngModel" ngModel required>
+                        <small class="text-danger mt-1" style="margin-left: -0.6vw;" *ngIf="passRef.errors?.required && passRef.touched">*Password should not be empty!</small>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="form-label text-white mt-2" style="">Confirm Password:</label>
+                        <input class="form-control" style="height: 5vh; width: 20vw;" type="password" placeholder="Confirm password..." #conPassRef="ngModel" name="confirmPassword" ngModel required>
+                        <small class="text-danger mt-1" style="margin-left: 0.2vw;" *ngIf="conPassRef.errors?.required && conPassRef.touched">*Please confirm password!</small>
+                    </div>
+                </div>
+                <div class="form-group mt-4" style="width: 100%; padding-left: 12vw;">
+                    <button class="btn btn-primary" style="margin-right: 5vw;" type="submit">Submit</button>
+                    
+                    <button class="btn btn-success" type="reset">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <form [formGroup]="myReactiveForm" (ngSubmit)="OnSubmitRF()">
+            <h2 class="formHead">Reactive Form</h2>
+            <div class="formData">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label class="row form-label text-white">First Name:</label>
+                        <input class="row form-control" style="height: 5vh;" placeholder="First name" type="text" formControlName="firstName" >
+                        <small class="row text-danger mt-1" *ngIf="myReactiveForm.get('firstName').errors?.required && myReactiveForm.get('firstName').touched">*First name should not be empty!</small>
+                        <small class="row text-danger mt-1" *ngIf="myReactiveForm.get('firstName').errors?.fnameRange && myReactiveForm.get('firstName').touched">*First name should 5 characters!</small>
+                    </div>
+                    <div class="row col-md-6 form-group">
+                        <label class="row form-label text-white">Last Name:</label>
+                        <input class="row form-control" style="height: 5vh;" placeholder="Last name" type="text" formControlName="lastName">
+                        <small class="row text-danger mt-1" *ngIf="myReactiveForm.get('lastName').errors?.required && myReactiveForm.get('lastName').touched">*Last name should not be empty!</small>
+                        <small class="row text-danger mt-1" *ngIf="myReactiveForm.get('lastName').errors?.lnameRange && myReactiveForm.get('lastName').touched">*Last name should max 10 characters!</small>
+                    </div>
+                </div>
+               <div class="row">
+                    <div class="form-group col-md-7">
+                        <label class="form-label text-white mt-2" style="margin-left: -0.6vw;">Email:</label>
+                        <input class="form-control" style="height: 5vh; margin-left: -0.6vw;" type="email" placeholder="Enter email..." formControlName="email">
+                        <small class="text-danger mt-1" *ngIf="myReactiveForm.get('email').errors?.required && myReactiveForm.get('email').touched" style="margin-left: 0.2vw;">*Email should not be empty!</small>
+                        <small class="text-danger mt-1" *ngIf="myReactiveForm.get('email').errors?.email && myReactiveForm.get('email').touched" style="margin-left: 0.2vw;">*Please enter valid email!</small>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label class="form-label text-white mt-2" style="">Age:</label>
+                        <input class="form-control" style="height: 5vh; width: 10vw;" type="number" placeholder="Enter age..." formControlName="age">
+                        <small class="text-danger mt-1" *ngIf="myReactiveForm.get('age').errors?.required && myReactiveForm.get('age').touched" style="margin-left: 0.2vw;">*Age should not be empty!</small>
+                        <small class="text-danger mt-1" *ngIf="myReactiveForm.get('age').errors?.ageRange && myReactiveForm.get('age').touched" style="margin-left: 0.2vw;">*Age should between 17-20!</small>
+                    </div>
+               </div>
+               <div class="row">
+                <div class="form-group col-md-7">
+                    <label class="form-label text-white mt-2" style="margin-left: -0.6vw;">Mobile No:</label>
+                    <input class="form-control" style="height: 5vh; margin-left: -0.6vw;" type="text" placeholder="Enter mobile number..." formControlName="mobile">
+                    <small class="text-danger mt-1" *ngIf="myReactiveForm.get('mobile').errors?.required && myReactiveForm.get('mobile').touched" style="margin-left: 0.2vw;">*Mobile number should not be empty!</small>
+                    <small class="text-danger mt-1" *ngIf="myReactiveForm.get('mobile').errors?.mobileRange && myReactiveForm.get('mobile').touched" style="margin-left: 0.2vw;">*Mb.No. should be maximum 10 numbers!</small>
+                </div>
+                <div class="form-group col-md-5">
+                        <label for="city" class="form-label text-white mt-2">City:</label>
+                        <select class="form-control" style="height: 5vh; width: 10vw; line-height: 2vh;" formControlName="city">
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Delhi">Delhi</option>
+                        </select>
+                </div>
+                </div>
+                <div class="form-group row">
+                    <label class="form-label text-white mt-2 col-md-3" style="margin-left: -0.6vw;">Gender:</label>
+                    <div *ngFor="let g of gender" class="custom-control custom-radio col-md-2 mt-2">
+                       <input type="radio" formControlName="gender" value="{{g.value}}" class="custom-control-input" style="margin-top: 1vh;">
+                       <label for="{{g.id}}" class="custom-control-label text-white">&nbsp;{{g.value}}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label class="form-label text-white mt-2" style="margin-left: -0.6vw;">Password:</label>
+                        <input class="form-control" style="height: 5vh; width: 20vw; margin-left: -0.6vw;" type="password" placeholder="Enter password..." formControlName="password">
+                        <small class=" text-danger mt-1" style="margin-left: -0.6vw;" *ngIf="myReactiveForm.get('password').errors?.required && myReactiveForm.get('password').touched">*Password should not be empty!</small>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="form-label text-white mt-2" style="">Confirm Password:</label>
+                        <input class="form-control" style="height: 5vh; width: 20vw;" type="password" placeholder="Confirm password..." formControlName="confirmPassword">
+                        <small class="text-danger mt-1" style="margin-left: 0.2vw;" *ngIf="myReactiveForm.get('confirmPassword').errors?.required && myReactiveForm.get('confirmPassword').touched">*Please confirm password!</small>
+                    </div>
+                </div>
+                <div class="form-group mt-4" style="width: 100%; padding-left: 12vw;">
+                    <button class="btn btn-primary" style="margin-right: 5vw;" type="submit">Submit</button>
+                    
+                    <button class="btn btn-success" type="reset">Reset</button>
+                </div>
+            </div>
+        </form>   
+    </div>
+</div>

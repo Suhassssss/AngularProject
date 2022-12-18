@@ -14,7 +14,6 @@ export class RfAssComponent implements OnInit {
   constructor(){
     this.createForm();
   }
-  enteredName: string;
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
   }
@@ -34,7 +33,11 @@ export class RfAssComponent implements OnInit {
       ];
   formData: Student[]=[];
   NaNames(controls:FormControl){
-    this.enteredName= controls.value;
+    // for (const iterator of this.myReactiveForm.value) {
+    //   if(iterator === this.myReactiveForm.value.username){
+
+    //   }
+    // }
     if(this.notAllowedNames.indexOf(controls.value) !== -1){
 
       return {'namesNotAllowed':true};

@@ -28,6 +28,7 @@ import { SimpletemplateComponent } from './simpletemplate/simpletemplate.compone
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomDirective } from './custom.directive';
 import { RfAssComponent } from './rf-ass/rf-ass.component';
+import { FormAssComponent } from './form-ass/form-ass.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { RfAssComponent } from './rf-ass/rf-ass.component';
     ReactiveformComponent,
     SimpletemplateComponent,
     CustomDirective,
-    RfAssComponent
+    RfAssComponent,
+    FormAssComponent
   ],
   imports: [
     BrowserModule,
