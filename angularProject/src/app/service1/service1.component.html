@@ -1,0 +1,11 @@
+<p>service1 works!</p>
+
+<button (click)="OnSubscribe()" class="btn btn-danger">Subscribe</button>
+<br><br>
+<ng-container *ngFor="let product of products">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Product Id: <strong class="text-success">{{product.id}}</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Product Name: <strong class="text-success">{{product.name}}</strong>
+    <br>
+</ng-container>
+<br><br>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ReactiveformComponent implements OnInit {
   myReactiveForm: FormGroup;
-  constructor(){
+  constructor(private _fb: FormBuilder){
     this.createForm();
   }
   enteredName: string;
@@ -37,17 +37,30 @@ export class ReactiveformComponent implements OnInit {
 }
 submitted: boolean = false;
   createForm(){
-    this.myReactiveForm = new FormGroup({
-      'userDetails': new FormGroup({
-      'username': new FormControl('',[Validators.required, this.NaNames.bind(this)]),
-      'email': new FormControl('',[Validators.required, Validators.email], this.NaEmails)
-    }),
-      'course': new FormControl('Angular'),
-      'gender': new FormControl('Male'),
-      'skills': new FormArray([
-        new FormControl(null, Validators.required)
-      ])
+    // this.myReactiveForm = new FormGroup({
+    //   'userDetails': new FormGroup({
+    //   'username': new FormControl('',[Validators.required, this.NaNames.bind(this)]),
+    //   'email': new FormControl('',[Validators.required, Validators.email], this.NaEmails)
+    // }),
+    //   'course': new FormControl('Angular'),
+    //   'gender': new FormControl('Male'),
+    //   'skills': new FormArray([
+    //     new FormControl(null, Validators.required)
+    //   ])
+    // })
+
+    this.myReactiveForm = this._fb.group({
+      userDetails: this._fb.group({
+        username: ['', Validators.required],
+        email: ['', Validators.required]
+      }),
+      course: ['Angular'],
+      gender: ['Male'],
+      skills: this._fb.array([new FormControl(null)])
     })
+  }
+  removeSkill(value){
+    // (<FormArray>this.myReactiveForm.get('skills')).pop();
   }
   OnAddSkills(){
     (<FormArray>this.myReactiveForm.get('skills')).push(new FormControl(null));

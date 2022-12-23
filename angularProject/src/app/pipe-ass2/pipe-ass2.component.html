@@ -1,0 +1,30 @@
+<div class="main">
+<h1>Using Pipe</h1>
+<div class="pipeDiv">
+    <h2>Employee Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Company</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of emp | gender">
+                <td>{{e.empId}}</td>
+                <td>{{e.empName}}</td>
+                <td>{{e.empCity}}</td>
+                <td>{{e.empGender}}</td>
+                <td>{{e.empDept}}</td>
+                <td>{{e.empCompany}}</td>
+                <td>{{e.empSalary | currency:'INR'}}</td>
+            </tr>
+        </tbody>
+    </table>    
+</div>
+</div>

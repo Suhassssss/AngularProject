@@ -1,0 +1,14 @@
+<p>pipe-demo works!</p>
+<div>
+   <p> Today's Date : {{todayDate | date | uppercase}} </p>
+   <p>
+    get values {{obser | async}}
+   </p>
+   <p>Currency pipe: &nbsp;&nbsp; {{price | currency:'INR'}}</p>
+   <p>Currency pipe: &nbsp;&nbsp; {{price | currency:'USD'}}</p>
+   <p>Currency pipe: &nbsp;&nbsp; {{price | currency:'EUR'}}</p>
+   <p>length: {{price | count}} </p>
+   <p> {{obj | json}} </p>
+   <p>{{myName | spRemove}}</p>
+   <p>{{myName | cmlCase}}</p>
+</div>

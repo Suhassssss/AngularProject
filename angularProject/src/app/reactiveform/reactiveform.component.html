@@ -37,10 +37,17 @@
 					  </div>
 					  <div class="form-group" formArrayName="skills">
 						<label>Skills</label>
-						<ng-container *ngFor="let skills of this.myReactiveForm.get('skills').controls; index as i">
-							<input type="text" class="form-control mt-2" formControlName="{{i}}" placeholder="Add Skills">
+						<ng-container class="row" *ngFor="let skills of this.myReactiveForm.get('skills').controls; index as i">
+							<div class="row">
+								<div class="col-md-8">
+									<input type="text" class="form-control" formControlName="{{i}}" placeholder="Add Skills">
+								</div>
+								<div class="col-md-4">
+									<button  class="btn btn-danger">Remove Skill</button>
+								</div>
+							</div>
 						</ng-container>
-						<button class=" btn-add btn btn-light btn-sm mt-4" (click)="OnAddSkills()"><i>+</i> Add Skills</button>
+						<button class=" btn-add btn btn-light btn-sm mt-4"><i>+</i> Add Skills</button>
 					  </div>
 				<button class="btn btn-success" type="submit">Submit</button>
             </form>

@@ -58,13 +58,14 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label class="form-label text-white mt-2" style="margin-left: -0.6vw;">Password:</label>
-                        <input class="form-control" style="height: 5vh; width: 20vw; margin-left: -0.6vw;" type="password" placeholder="Enter password..." name="password" #passRef="ngModel" ngModel required>
+                        <input class="form-control" style="height: 5vh; width: 20vw; margin-left: -0.6vw;" type="password" (change)="getPassST($event)" placeholder="Enter password..." name="password" #passRef="ngModel" ngModel required>
                         <small class="text-danger mt-1" style="margin-left: -0.6vw;" *ngIf="passRef.errors?.required && passRef.touched">*Password should not be empty!</small>
                     </div>
                     <div class="form-group col-md-6">
                         <label class="form-label text-white mt-2" style="">Confirm Password:</label>
-                        <input class="form-control" style="height: 5vh; width: 20vw;" type="password" placeholder="Confirm password..." #conPassRef="ngModel" name="confirmPassword" ngModel required>
+                        <input class="form-control" style="height: 5vh; width: 20vw;" type="password" placeholder="Confirm password..." #conPassRef="ngModel" name="confirmPassword" [pattern]="stPass" ngModel required>
                         <small class="text-danger mt-1" style="margin-left: 0.2vw;" *ngIf="conPassRef.errors?.required && conPassRef.touched">*Please confirm password!</small>
+                        <small class="text-danger mt-1" style="margin-left: 0.2vw;" *ngIf="conPassRef.errors?.pattern && conPassRef.touched">*Please enter correct password!</small>
                     </div>
                 </div>
                 <div class="form-group mt-4" style="width: 100%; padding-left: 12vw;">
@@ -83,8 +84,12 @@
                     <div class="col-md-6 form-group">
                         <label class="row form-label text-white">First Name:</label>
                         <input class="row form-control" style="height: 5vh;" placeholder="First name" type="text" formControlName="firstName" >
-                        <small class="row text-danger mt-1" *ngIf="myReactiveForm.get('firstName').errors?.required && myReactiveForm.get('firstName').touched">*First name should not be empty!</small>
-                        <small class="row text-danger mt-1" *ngIf="myReactiveForm.get('firstName').errors?.fnameRange && myReactiveForm.get('firstName').touched">*First name should 5 characters!</small>
+                        <!-- <small class="row text-danger mt-1" *ngIf="myReactiveForm.get('firstName').errors?.required && myReactiveForm.get('firstName').touched">*First name should not be empty!</small>
+                        <small class="row text-danger mt-1" *ngIf="myReactiveForm.get('firstName').errors?.fnameRange && myReactiveForm.get('firstName').touched">*First name should 5 characters!</small> -->
+                        <small *ngIf="myReactiveForm.get('firstName').invalid && myReactiveForm.get('firstName').touched">
+                            <small class="row text-danger mt-1" *ngIf="myReactiveForm.get('firstName').errors['required']">*First name should not be empty!</small>
+                            <small class="row text-danger mt-1" *ngIf="myReactiveForm.get('firstName').errors['fnameRange']">*First name should 5 characters!</small>
+                        </small>
                     </div>
                     <div class="row col-md-6 form-group">
                         <label class="row form-label text-white">Last Name:</label>
@@ -127,19 +132,20 @@
                     <label class="form-label text-white mt-2 col-md-3" style="margin-left: -0.6vw;">Gender:</label>
                     <div *ngFor="let g of gender" class="custom-control custom-radio col-md-2 mt-2">
                        <input type="radio" formControlName="gender" value="{{g.value}}" class="custom-control-input" style="margin-top: 1vh;">
-                       <label for="{{g.id}}" class="custom-control-label text-white">&nbsp;{{g.value}}</label>
+                       <label class="custom-control-label text-white">&nbsp;{{g.value}}</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label class="form-label text-white mt-2" style="margin-left: -0.6vw;">Password:</label>
-                        <input class="form-control" style="height: 5vh; width: 20vw; margin-left: -0.6vw;" type="password" placeholder="Enter password..." formControlName="password">
+                        <input class="form-control" style="height: 5vh; width: 20vw; margin-left: -0.6vw;" type="password" (change)="getPassword()"  placeholder="Enter password..." formControlName="password">
                         <small class=" text-danger mt-1" style="margin-left: -0.6vw;" *ngIf="myReactiveForm.get('password').errors?.required && myReactiveForm.get('password').touched">*Password should not be empty!</small>
                     </div>
                     <div class="form-group col-md-6">
                         <label class="form-label text-white mt-2" style="">Confirm Password:</label>
                         <input class="form-control" style="height: 5vh; width: 20vw;" type="password" placeholder="Confirm password..." formControlName="confirmPassword">
                         <small class="text-danger mt-1" style="margin-left: 0.2vw;" *ngIf="myReactiveForm.get('confirmPassword').errors?.required && myReactiveForm.get('confirmPassword').touched">*Please confirm password!</small>
+                        <small class="text-danger mt-1" style="margin-left: 0.2vw;" *ngIf="myReactiveForm.get('confirmPassword').errors?.passMatch && myReactiveForm.get('confirmPassword').touched">*Please enter correct password!</small>
                     </div>
                 </div>
                 <div class="form-group mt-4" style="width: 100%; padding-left: 12vw;">

@@ -29,6 +29,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CustomDirective } from './custom.directive';
 import { RfAssComponent } from './rf-ass/rf-ass.component';
 import { FormAssComponent } from './form-ass/form-ass.component';
+import { Service1Component } from './service1/service1.component';
+import { Service2Component } from './service2/service2.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiDataComponent } from './api-data/api-data.component';
+import { Comp1Component } from './comp1/comp1.component';
+import { Comp2Component } from './comp2/comp2.component';
+import { Comp3Component } from './comp3/comp3.component';
+import { Comp4Component } from './comp4/comp4.component';
+import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
+import { CountPipe } from './count.pipe';
+import { SpRemovePipe } from './sp-remove.pipe';
+import { CmlCasePipe } from './cml-case.pipe';
+import { PipeAssComponent } from './pipe-ass/pipe-ass.component';
+import { FilterpipeComponent } from './filterpipe/filterpipe.component';
+import { FilterPipe } from './filter.pipe';
+import { PipeAss2Component } from './pipe-ass2/pipe-ass2.component';
+import { GenderPipe } from './gender.pipe';
 
 @NgModule({
   declarations: [
@@ -57,13 +74,30 @@ import { FormAssComponent } from './form-ass/form-ass.component';
     SimpletemplateComponent,
     CustomDirective,
     RfAssComponent,
-    FormAssComponent
+    FormAssComponent,
+    Service1Component,
+    Service2Component,
+    ApiDataComponent,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    Comp4Component,
+    PipeDemoComponent,
+    CountPipe,
+    SpRemovePipe,
+    CmlCasePipe,
+    PipeAssComponent,
+    FilterpipeComponent,
+    FilterPipe,
+    PipeAss2Component,
+    GenderPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

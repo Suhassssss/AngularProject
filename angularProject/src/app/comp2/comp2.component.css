@@ -1,0 +1,29 @@
+.mainDiv{
+    border: 1px solid silver;
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 13vw;
+    margin-right: 2vw;
+    margin-top: 2vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+button{
+    margin-top: 2vh;
+}
+table{
+    margin-top: 3vh;
+}
+h1{
+    color:rgb(255, 242, 0);
+}
+label{
+    color:rgb(197, 241, 0);
+    font-size: 20px;
+}
+h2{
+    margin-top: 4vh;
+    color:rgb(255, 242, 0);
+}
+b{
+    color: rgb(255, 48, 227);
+}

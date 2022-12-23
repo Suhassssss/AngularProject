@@ -1,0 +1,36 @@
+<div class="background">
+
+</div>
+<div class="row" style="height: 100vh; width: 100vw;">
+    <div class="col-md-6" style="padding-left: 3vw;">
+    <h1>Built-In Pipes</h1>
+    <h3>Date</h3>
+    <strong>Simple Date:</strong><label>&nbsp; {{todayDate}} </label> <br>
+    <strong>Using date pipe:</strong><label>&nbsp; {{todayDate | date}} </label> <br>
+    <strong>Using short date:</strong><label>&nbsp; {{todayDate | date:'shortDate'}} </label> <br>
+    <strong>Using full date:</strong><label>&nbsp; {{todayDate | date:'fullDate'}} </label> <br>
+    <strong>Using short time:</strong><label>&nbsp; {{todayDate | date:'shortTime'}} </label> <br>
+    <h3>Uppercase</h3>
+    <strong>Simple Text:</strong><label>&nbsp; {{name}} </label> <br>
+    <strong>Using uppercase:</strong><label>&nbsp; {{name | uppercase}} </label> <br>
+    <h3>Lowercase</h3>
+    <strong>Simple Text:</strong><label>&nbsp; {{msg}} </label> <br>
+    <strong>Using lowercase:</strong><label>&nbsp; {{msg | lowercase}} </label> <br>
+    <h3>Currency</h3>
+    <strong>Simple Salary:</strong><label>&nbsp; {{sal}} </label> <br>
+    <strong>Using INR currency:</strong><label>&nbsp; {{sal | currency:'INR'}} </label> <br>
+    <strong>Using USD currency:</strong><label>&nbsp; {{sal | currency:'USD'}} </label> <br>
+    </div>
+    <div class="col-md-6">
+        <h1>Custom Pipes</h1> <br>
+        <h3>Count</h3>
+        <strong>Text:</strong><label>&nbsp; {{name}} </label> <br>
+        <strong>Length:</strong><label>&nbsp; {{name | count}} </label> <br> <br>
+        <h3>Replace space with underscore</h3>
+        <strong>Simple Text:</strong><label>&nbsp; {{msg}} </label> <br>
+        <strong>Using custom pipe:</strong><label>&nbsp; {{msg | spRemove}} </label> <br> <br>
+        <h3>Camel Casing</h3>
+        <strong>Simple Text:</strong><label>&nbsp; {{msg}} </label> <br>
+        <strong>Using custom pipe:</strong><label>&nbsp; {{msg | cmlCase}} </label> <br>
+    </div>
+</div>

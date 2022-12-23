@@ -1,0 +1,43 @@
+.main{
+    background-color: rgb(136, 197, 15);
+    
+    width: 100vw;
+    height: 100vh;
+}
+h1{
+    width: 100vw;
+    text-align: center;
+    color: rgb(255, 255, 0);
+}
+h2{
+    text-align: center;
+    color: aliceblue;
+    margin-top: 4vh;
+}
+.pipeDiv{
+    width: 60vw;
+    height: 80vh;
+    margin-left: 20vw;
+    /* background-color: rgb(204, 216, 225); */
+}
+.pipeDiv table{
+    width: 60vw;
+    height: 65vh;
+    margin-top: 2vh;
+    box-shadow: 5px 5px 10px rgb(24, 24, 24);
+}
+th{
+    background-color: rgb(1, 89, 130);
+    color: white;
+    height: 6vh;
+}
+tr:nth-child(even){
+    background-color: rgb(138, 166, 179);
+}
+tr:nth-child(odd){
+    background-color: rgb(206, 221, 228);
+}
+th, td{
+    border-bottom: 1px solid rgb(97, 97, 97);
+    text-align: center;
+}

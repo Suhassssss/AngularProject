@@ -1,0 +1,15 @@
+tr th{
+    background-color: rgb(33, 65, 0);
+    color: rgb(233, 229, 0);
+    height: 50px;
+}
+tr td{
+    height: 50px;
+    font-family: calibri;
+}
+tr:nth-child(even){
+    background-color: rgb(173, 216, 99);
+}
+tr:nth-child(odd){
+    background-color: rgb(114, 180, 0);
+}
