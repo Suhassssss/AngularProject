@@ -1,0 +1,42 @@
+<app-navbars></app-navbars>
+<div class="row">
+    <div class="col-md-7">
+        <div class="card" style="width: 18rem; margin-left: 20px; height: 25rem;">
+            <img class="card-img-top" src="../../assets//images/tv.webp" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">TV</h5> <br>
+              <h5>{{tvPrice | currency:'INR'}}</h5>
+              <!-- <p class="card-text">SONY Bravia 163.9 cm (65 inch) Ultra HD (4K) LED Smart Google TV with Google TV  (KD-65X75K)</p> -->
+              <a routerLink="tv" class="btn btn-primary">View more</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin-left: 20px; height: 25rem;">
+            <img class="card-img-top" src="../../assets//images/tablet.webp" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Tablet</h5> <br>
+              <h5>{{tabPrice | currency: 'INR'}}</h5>
+              <!-- <p class="card-text">SAMSUNG Galaxy Tab S8+ With Stylus 8 GB RAM 128 GB ROM 12.4 inch with Wi-Fi Only Tablet (Silver)</p> -->
+              <a routerLink="tablet" class="btn btn-primary">View more</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin-left: 20px; height: 25rem;">
+            <img class="card-img-top" src="../../assets//images/laptop.webp" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Laptop</h5>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <a routerLink="tv" class="btn btn-primary">View more</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem; margin-left: 20px; height: 28rem;">
+            <img class="card-img-top" src="../../assets//images/washingmachine.webp" alt="Card image cap" width="7rem" height="300rem">
+            <div class="card-body">
+              <h5 class="card-title">Washing Machine</h5>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <a routerLink="tv" class="btn btn-primary">View more</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-5">
+        <router-outlet></router-outlet>
+    </div>
+</div>

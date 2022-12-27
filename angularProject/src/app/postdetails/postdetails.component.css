@@ -1,0 +1,18 @@
+table{
+    width: 98vw;
+    margin-left: 0.5vw;
+    border: 1px solid rgb(101, 103, 105);;
+}
+table tr th{
+    background-color: rgb(101, 103, 105);
+    text-align: center;
+    color: white;
+    height: 6vh;
+}
+table tr td{
+    text-align: center;
+    height: 6vh;
+}
+tr:nth-child(odd){
+    background-color: rgb(221, 224, 226);
+}

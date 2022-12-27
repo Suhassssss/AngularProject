@@ -10,8 +10,8 @@ export class CustmdirDirective {
   msg:string= "";
 
   constructor() { 
-  console.log(this.cnfrmPassword);
-  console.log(this.password);
+  // console.log(this.cnfrmPassword);
+  // console.log(this.password);
   
   
   if (this.password==this.cnfrmPassword) {

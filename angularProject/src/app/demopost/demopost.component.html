@@ -1,0 +1,56 @@
+<table class="tableClass">
+    <thead>
+        <tr>
+        <th style="width: 4rem;">User Id</th>
+        <th style="width: 4rem;">Id</th>
+        <th>Title</th>
+        <th>Body</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of arrPosts">
+            <td> {{data.userId}} </td>
+            <!-- <td> <a [routerLink]="['/postdetails', data.id]"> {{data.id}} </a>  </td> -->
+            <button type="button" class="btnId" data-toggle="modal" data-target="#exampleModalCenter" (click)="openModal(data.id)">{{data.id}}</button>
+            <td> {{data.title}} </td>
+            <td> {{data.body}} </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Post Details</h5>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <table class="table border bg-secondary ">
+                        <thead>
+                            <tr class="text-white">
+                                <th style="text-align: center;">UserID</th>
+                                <th style="text-align: center;">ID</th>
+                                <th style="text-align: center;">Title</th>
+                                <th style="text-align: center;">Body</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr style="background-color: rgb(225, 223, 221);">
+                                <td style="line-height: 10vh;">{{arrPosts[id].userId}}</td>
+                                <td style="line-height: 10vh;">{{arrPosts[id].id}}</td>
+                                <td>{{arrPosts[id].title}}</td>
+                                <td>{{arrPosts[id].body}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

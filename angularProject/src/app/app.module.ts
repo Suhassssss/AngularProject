@@ -46,6 +46,20 @@ import { FilterpipeComponent } from './filterpipe/filterpipe.component';
 import { FilterPipe } from './filter.pipe';
 import { PipeAss2Component } from './pipe-ass2/pipe-ass2.component';
 import { GenderPipe } from './gender.pipe';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { ProductsComponent } from './products/products.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { LaptopComponent } from './products/laptop/laptop.component';
+import { TvComponent } from './products/tv/tv.component';
+import { TabletComponent } from './products/tablet/tablet.component';
+import { WashingmachineComponent } from './products/washingmachine/washingmachine.component';
+import { RoutingAssComponent } from './routing-ass/routing-ass.component';
+import { NavbarsComponent } from './navbars/navbars.component';
+import { DemopostComponent } from './demopost/demopost.component';
+import { PostdetailsComponent } from './postdetails/postdetails.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +104,21 @@ import { GenderPipe } from './gender.pipe';
     FilterpipeComponent,
     FilterPipe,
     PipeAss2Component,
-    GenderPipe
+    GenderPipe,
+    AboutusComponent,
+    ContactusComponent,
+    ProductsComponent,
+    HomeComponent,
+    LoginComponent,
+    PagenotfoundComponent,
+    LaptopComponent,
+    TvComponent,
+    TabletComponent,
+    WashingmachineComponent,
+    RoutingAssComponent,
+    NavbarsComponent,
+    DemopostComponent,
+    PostdetailsComponent
   ],
   imports: [
     BrowserModule,

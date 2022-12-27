@@ -25,7 +25,7 @@ export class RfAssComponent implements OnInit {
       'gender': new FormControl('Male')
     })
   }
-  notAllowedNames: any[] = [];
+  notAllowedNames: any[] = ['Suhas'];
   genders = [
         {id: '1', value: 'Male'},
         {id: '2', value: 'Female'},

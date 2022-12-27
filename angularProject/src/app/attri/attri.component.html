@@ -9,7 +9,7 @@
         'text-danger' person.country === 'HK'
     }">{{person.name}} ({{person.country}})</li>
 </ul> -->
-<!-- <h4>Ng Class</h4>
+<h4>Ng Class</h4>
 
 <ul *ngFor="let person of people">
     <li [ngClass]="{
@@ -21,9 +21,9 @@
      {{person.name}} ({{person.country}})
     </li>
 </ul>
-<p>Normal Para</p>
+<p appCustdir>Normal Para</p>
 <p appCustdir>Custom directive Para</p>
-<div appCustdir>Custom directive div</div> -->
+<div appCustdir>Custom directive div</div>
 
     <table>
         <tbody>
@@ -34,7 +34,7 @@
             <tr>
                 <td><label>Confirm Password:</label></td>
                 <td><input type="text" [(ngModel)]  = "cnfrmPassword"></td>
-                <td colspan="2" appCustmdir>{{msg}}</td>
+                <td colspan="2" appCustdir>{{msg}}</td>
             </tr>
             <tr>
                 
@@ -45,14 +45,14 @@
             </tr>
         </tbody>
     </table>
-    <br><br>
+    <!-- <br><br>
     <input type="text" [(ngModel)]="txt"  #txtInput (keyup)="getInputValue(txtInput.value)">
     <button  (click)="getInputValue(txtInput.value)">Show</button>
-    <p style="display: inline">{{textInput}}</p>
+    <p style="display: inline">{{textInput}}</p> -->
     <button class="btn btn-danger" (click)="newHookExists()">Destroy</button>
     <!-- <app-directives [myinputMsg]="textInput"></app-directives> -->
-    <app-newhooks *ngIf="newHookExist" [myinputMsg]="txt" (myEvent)="getDataFromChild($event)"> 
+    <!-- <app-newhooks *ngIf="newHookExist" [myinputMsg]="txt" (myEvent)="getDataFromChild($event)"> 
         <h2 #attrih2 >attri content</h2>
         <p #para>paragraph</p>
-    </app-newhooks>
+    </app-newhooks> -->
     

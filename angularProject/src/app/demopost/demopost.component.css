@@ -1,0 +1,24 @@
+.tableClass{
+    width: 98vw;
+    margin-left: 0.5vw;
+    border: 1px solid rgb(101, 103, 105);;
+}
+.tableClass tr th{
+    background-color: rgb(101, 103, 105);
+    text-align: center;
+    color: white;
+    height: 6vh;
+}
+.tableClass tr td{
+    text-align: center;
+    height: 6vh;
+}
+tr:nth-child(even){
+    background-color: rgb(221, 224, 226);
+}
+.btnId{
+    background-color: transparent;
+    border: none;
+    line-height: 10vh;
+    padding-left: 2vw;
+}

@@ -14,7 +14,6 @@ export class GenderPipe implements PipeTransform {
       } else {
         return value.empName =  mrs.concat('. '+value.empName);
       }
-      // return search.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1
     });
   }
 

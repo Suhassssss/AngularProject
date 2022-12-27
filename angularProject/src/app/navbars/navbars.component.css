@@ -1,0 +1,43 @@
+header{
+    background-color: blue;
+    margin-bottom: 2vh;
+}
+nav{
+    height: 10vh;
+    text-align: left;
+    width: 50vw;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 5vh;
+    line-height: 10vh;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: yellow;
+}
+a:active{
+    color: yellow;
+}
+.titleDiv{
+    height: 10vh;
+    width: 40vw;
+}
+header h1{
+    color: rgb(255, 255, 0);
+    width:30vw;
+    position: absolute;
+    font-family: mv boli;
+    margin-top: -11vh;
+    margin-left: 60vw;
+}
+header h1 span{
+    color: rgb(255, 255, 255);
+}

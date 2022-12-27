@@ -14,7 +14,7 @@ userDetails;
       this.userName = res;
       console.log(this.userName);
     })
-      this._utilityService.userData.subscribe(data => {
+      this._utilityService.userData.subscribe((data) => {
         this.userDetails = data;
         console.log("Constructor: ", this.userDetails);
         

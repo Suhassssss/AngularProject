@@ -1,11 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { devAPIUrl } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DemoService {
-  apiURL = 'https://jsonplaceholder.typicode.com/users';
+  apiURL = 'https://jsonplaceholder.typicode.com';
+  user = '/users';
 products = [
   {name: 'laptop', id: '101'},
   {name: 'Mobile', id: '102'},
@@ -16,6 +19,12 @@ products = [
     alert('Subscribed successfully');
   }
   getUserData(){
-   return this.http.get(this.apiURL);
+   return this.http.get(this.apiURL+this.user);
+  }
+  getPosts(): Observable<any>{
+    return this.http.get(`${devAPIUrl}posts`);
+  }
+  getPostBYId(id){
+    return this.http.get(`${devAPIUrl}posts/`+id);
   }
 }
