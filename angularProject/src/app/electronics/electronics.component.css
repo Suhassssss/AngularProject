@@ -1,0 +1,21 @@
+.mainDiv{
+    background-color: rgb(224, 222, 222);
+    width: 99vw;
+    height: 100vh;
+    margin-top: -1vh;
+    padding: 1vh 0.5vh 1vh 1vh;
+}
+.optionDiv{
+    background-color: rgb(255, 255, 255);
+    width: 98vw;
+    height: 20vh;
+}
+.contentDiv{
+    background-color: rgb(255, 255, 255);
+    margin-top: 1vh;
+    width: 98vw;
+    height: 80vh;
+}
+.active{
+    color: blue;
+}

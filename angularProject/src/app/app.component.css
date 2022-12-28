@@ -7,14 +7,40 @@
 }
 .nav{
     width: 99vw;
-    background-color: blue;
+    background-color: rgb(94, 94, 255);
     margin-bottom: 1vh;
+}
+.nav li{
+    padding-bottom: 0px;
+    margin-bottom: 8px;
+    /* background-color: chartreuse; */
+}
+.nav-link{
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+    /* background-color: red; */
 }
 .navbar a{
     color: white;
     font-weight: bold;
+    border: none;
+}
+.navbar{
+    border: none;
+}
+.navbar a:hover{
+    border: none;
+    color: yellow;
 }
 .navbar .active{
+    background-color: transparent;
+    color: yellow;
+}
+.nav2{
+    display: inline-block;
+}
+.nav2 .navbar2{
     background-color: yellow;
-    color: black;
+    width: 10vw;
+    height: 5vh;
 }

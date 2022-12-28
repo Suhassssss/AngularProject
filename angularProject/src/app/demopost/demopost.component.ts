@@ -8,8 +8,9 @@ declare var  window: any;
   styleUrls: ['./demopost.component.css']
 })
 export class DemopostComponent implements OnInit {
-  arrPosts: Post[] = [];
+  
   id: number;
+  arrPosts: Post[]=[];
   constructor(private _demoService: DemoService) { }
   formModal: any;
   ngOnInit() {
@@ -23,7 +24,6 @@ export class DemopostComponent implements OnInit {
   }
   openModal(btnValue){
     this.id = btnValue - 1;
-    // console.log("target value: ", btnValue - 1 );
     
     this.formModal.show();
   }

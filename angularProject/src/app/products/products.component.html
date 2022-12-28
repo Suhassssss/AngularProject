@@ -1,10 +1,10 @@
-<app-navbars></app-navbars>
+<!-- <app-navbars></app-navbars> -->
 <div class="row">
     <div class="col-md-7">
         <div class="card" style="width: 18rem; margin-left: 20px; height: 25rem;">
             <img class="card-img-top" src="../../assets//images/tv.webp" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">TV</h5> <br>
+              <h5 class="card-title" appCustdir [color]="'red'">TV</h5> <br>
               <h5>{{tvPrice | currency:'INR'}}</h5>
               <!-- <p class="card-text">SONY Bravia 163.9 cm (65 inch) Ultra HD (4K) LED Smart Google TV with Google TV  (KD-65X75K)</p> -->
               <a routerLink="tv" class="btn btn-primary">View more</a>

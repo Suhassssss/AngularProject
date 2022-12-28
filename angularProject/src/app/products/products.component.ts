@@ -9,7 +9,6 @@ export class ProductsComponent implements OnInit {
 tabPrice:number = 66999;
 tvPrice:number = 86480;
   constructor() { }
-
   ngOnInit() {
   }
 

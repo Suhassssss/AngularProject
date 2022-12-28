@@ -60,6 +60,13 @@ import { RoutingAssComponent } from './routing-ass/routing-ass.component';
 import { NavbarsComponent } from './navbars/navbars.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
+import { ProductsModule } from './products/products.module';
+import { RouterModule } from '@angular/router';
+import { UtilityModule } from './models/utility.module';
+import { ElectronicsComponent } from './electronics/electronics.component';
+import { MobilesComponent } from './electronics/mobiles/mobiles.component';
+import { CamerasComponent } from './electronics/cameras/cameras.component';
+import { ElectronicsModule } from './electronics/electronics.module';
 
 @NgModule({
   declarations: [
@@ -71,7 +78,6 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
     DemodirectivesComponent,
     DirectivesComponent,
     AttriComponent,
-    CustdirDirective,
     CustmdirDirective,
     ChildCompComponent,
     ParentCompComponent,
@@ -107,25 +113,31 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
     GenderPipe,
     AboutusComponent,
     ContactusComponent,
-    ProductsComponent,
+    // ProductsComponent,
     HomeComponent,
     LoginComponent,
     PagenotfoundComponent,
-    LaptopComponent,
-    TvComponent,
-    TabletComponent,
-    WashingmachineComponent,
+    // LaptopComponent,
+    // TvComponent,
+    // TabletComponent,
+    // WashingmachineComponent,
     RoutingAssComponent,
     NavbarsComponent,
     DemopostComponent,
     PostdetailsComponent
+    // ElectronicsComponent,
+    // MobilesComponent,
+    // CamerasComponent
   ],
   imports: [
     BrowserModule,
+    ElectronicsModule,
+    ProductsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    UtilityModule
   ],
   providers: [],
   bootstrap: [AppComponent]
