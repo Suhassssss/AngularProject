@@ -10,6 +10,8 @@ declare var  window: any;
 export class DemopostComponent implements OnInit {
   
   id: number;
+  display: string = "none"
+  mt: string = "-57vh";
   arrPosts: Post[]=[];
   constructor(private _demoService: DemoService) { }
   formModal: any;
@@ -17,18 +19,27 @@ export class DemopostComponent implements OnInit {
     this._demoService.getPosts().subscribe(res => {
       this.arrPosts = res;
       console.log('jesonplaceholder arrPost', this.arrPosts);
-      this.formModal = new window.bootstrap.Modal(
-        document.getElementById("myModal")
-      )
+      // this.formModal = new window.bootstrap.Modal(
+      //   document.getElementById("myModal")
+      // )
     })
   }
-  openModal(btnValue){
-    this.id = btnValue - 1;
+  // openModal(btnValue){
+  //   this.id = btnValue - 1;
     
-    this.formModal.show();
+  //   this.formModal.show();
+  // }
+  // closeModal(){
+  //   this.formModal.hide();
+  // }
+  openPopup(btnValue){
+    this.id = btnValue - 1;
+    this.display = "block";
+    this.mt = "16vh";
+    
   }
-  closeModal(){
-    this.formModal.hide();
+  closePopup(){
+    this.display = "none";
+    this.mt = "-57vh";
   }
-
 }

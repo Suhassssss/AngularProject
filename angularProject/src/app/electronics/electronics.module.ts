@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UtilityModule } from '../models/utility.module';
 
 const electronic: Routes=[
-  { path: 'electronics', component: ElectronicsComponent, children:[
+  { path: '', component: ElectronicsComponent, children:[
     { path: 'mobile', component: MobilesComponent },
     { path: 'camera', component: CamerasComponent }
   ] },
@@ -28,4 +28,9 @@ const electronic: Routes=[
     RouterModule
   ]
 })
-export class ElectronicsModule { }
+export class ElectronicsModule {
+  constructor(){
+    console.log("Electronics module called");
+    
+  }
+ }

@@ -12,7 +12,7 @@ export class CustdirDirective implements OnInit {
     // render.setStyle(el.nativeElement, 'color', this.color);
    }
 ngOnInit(){
-  console.log('custom directive applied', this.color);
+  // console.log('custom directive applied', this.color);
   this.render.setStyle(this.el.nativeElement, 'color', this.color);
 }
 }

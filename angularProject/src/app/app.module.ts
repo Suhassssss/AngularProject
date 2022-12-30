@@ -60,13 +60,14 @@ import { RoutingAssComponent } from './routing-ass/routing-ass.component';
 import { NavbarsComponent } from './navbars/navbars.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
-import { ProductsModule } from './products/products.module';
 import { RouterModule } from '@angular/router';
 import { UtilityModule } from './models/utility.module';
 import { ElectronicsComponent } from './electronics/electronics.component';
 import { MobilesComponent } from './electronics/mobiles/mobiles.component';
 import { CamerasComponent } from './electronics/cameras/cameras.component';
 import { ElectronicsModule } from './electronics/electronics.module';
+import { AdduserComponent } from './adduser/adduser.component';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
@@ -124,15 +125,17 @@ import { ElectronicsModule } from './electronics/electronics.module';
     RoutingAssComponent,
     NavbarsComponent,
     DemopostComponent,
-    PostdetailsComponent
+    PostdetailsComponent,
+    AdduserComponent
     // ElectronicsComponent,
     // MobilesComponent,
     // CamerasComponent
   ],
   imports: [
     BrowserModule,
-    ElectronicsModule,
-    ProductsModule,
+    // ElectronicsModule,
+    // ProductsModule,
+    // OrdersModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -142,4 +145,9 @@ import { ElectronicsModule } from './electronics/electronics.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    console.log("App module called");
+    
+  }
+ }
