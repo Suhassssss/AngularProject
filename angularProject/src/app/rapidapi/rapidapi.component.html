@@ -1,0 +1,35 @@
+<!-- <h1>{{newsTitle}}</h1>
+<img src="{{newsImgURL}}" alt="image" width="300px" height="300px">
+<table>
+    <tr>
+        <th>Id</th>
+
+    </tr>
+    <tr *ngFor=" let n of newsModules">
+        <td>{{n.id}}</td>
+    </tr>
+</table> -->
+  <table class="table1">
+                <tr>
+                    <th class="th1">Id</th>
+                    <th class="th2">Title</th>
+                    <th class="th3">Date</th>
+                    <th class="th4">Card</th>
+                    <th class="th5">Long URL</th>
+                </tr>
+                <tr *ngFor="let n of news1">
+                    <td class="td1"> {{n.id}}</td>
+                    <td class="td2"> {{n.title}}</td>
+                    <td class="td3"> {{n.date}}</td>
+                    <td class="td4"> {{n.card}}</td>
+                    <td class="td5"> {{n.longURL}}</td>
+                </tr>
+        </table>
+        <table class="table2">
+            <tr>
+                <th>Thumbnail Images</th>
+            </tr>
+            <tr *ngFor="let n of newsImage">
+                <td> <img src="{{n}}" alt="Thumbnail not available" width="100px" height="100px"> </td>
+            </tr>
+        </table>        

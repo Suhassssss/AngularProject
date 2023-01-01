@@ -34,6 +34,7 @@ const routes: Routes = [
   // ]},
   // { path: 'electronics', canActivate:[AuthGuard], loadChildren: './electronics/electronics.module#ElectronicsModule' },
   // { path: 'products', component: ProductsComponent },
+  { path: 'rapidapi', loadChildren: './rapidapi/rapidapi.module#RapidapiModule' },
   { path: 'electronics', loadChildren: './electronics/electronics.module#ElectronicsModule' },
   // { path: 'products', component: ProductsComponent },
   { path: 'products', loadChildren: './products/products.module#ProductsModule' },

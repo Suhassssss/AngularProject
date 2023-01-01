@@ -68,6 +68,7 @@ import { CamerasComponent } from './electronics/cameras/cameras.component';
 import { ElectronicsModule } from './electronics/electronics.module';
 import { AdduserComponent } from './adduser/adduser.component';
 import { ProductsModule } from './products/products.module';
+import { RapidapiComponent } from './rapidapi/rapidapi.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +128,7 @@ import { ProductsModule } from './products/products.module';
     DemopostComponent,
     PostdetailsComponent,
     AdduserComponent
+    // RapidapiComponent
     // ElectronicsComponent,
     // MobilesComponent,
     // CamerasComponent
@@ -148,6 +150,5 @@ import { ProductsModule } from './products/products.module';
 export class AppModule {
   constructor(){
     console.log("App module called");
-    
   }
  }

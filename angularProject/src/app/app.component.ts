@@ -25,4 +25,10 @@ export class AppComponent implements OnInit {
   handleData(value){
     this.data = value.target.value;
   }
+  deletePost(){
+    this._demoService.deletePostById(1).subscribe(res=>{
+      console.log("deletePost: "+ res);
+      
+    })
+  }
 }

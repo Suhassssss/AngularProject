@@ -25,6 +25,9 @@ products = [
     return this.http.get(`${devAPIUrl}posts`);
   }
   getPostBYId(id){
-    return this.http.get(`${devAPIUrl}posts/`+id);
+    return this.http.get(`${devAPIUrl}posts/` + id);
+  }
+  deletePostById(id){
+    return this.http.delete(`${devAPIUrl}posts/` + id)
   }
 }
