@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../services/firebase.service';
 import { RapidApiService } from '../services/rapid-api.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { RapidApiService } from '../services/rapid-api.service';
 })
 export class RapidapiComponent implements OnInit {
 
-  constructor( private _rapidAPIService: RapidApiService ) { 
+  constructor( private _rapidAPIService: RapidApiService, private _fireBaseService: FirebaseService ) { 
   }
 res: any;
 news: any;
@@ -18,6 +19,7 @@ newsModules: any;
 newsImage: string[] = [];
 newsImgURL: string;
   ngOnInit() {
+   
     this._rapidAPIService.getDataBBFinance().subscribe((res) => {
       console.log( "Rapid Api: ", res);
       this.res = res;
@@ -51,4 +53,10 @@ newsImgURL: string;
   // console.log("NewsImages: ", this.news1);
 
   }
+  // CreatePost(){
+  //   this._fireBaseService.createPost().subscribe(res => {
+  //     console.log("Firebase Post", res);
+      
+  //   })
+  // }
 }

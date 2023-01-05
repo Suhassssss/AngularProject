@@ -69,6 +69,7 @@ import { ElectronicsModule } from './electronics/electronics.module';
 import { AdduserComponent } from './adduser/adduser.component';
 import { ProductsModule } from './products/products.module';
 import { RapidapiComponent } from './rapidapi/rapidapi.component';
+import { CrudAppComponent } from './crud-app/crud-app.component';
 
 @NgModule({
   declarations: [
@@ -127,7 +128,8 @@ import { RapidapiComponent } from './rapidapi/rapidapi.component';
     NavbarsComponent,
     DemopostComponent,
     PostdetailsComponent,
-    AdduserComponent
+    AdduserComponent,
+    CrudAppComponent
     // RapidapiComponent
     // ElectronicsComponent,
     // MobilesComponent,
