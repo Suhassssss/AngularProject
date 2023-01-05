@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row row1 justify-content-center inputPanel">
+        <div class="col-md-6 text-left rounded" *ngIf="addData">
+            <form [formGroup]="myReactiveForm">
+                <div class="form-group form-group1">
+                    <label class="form-label">Name: </label>
+                    <input id="name"  class="form-control" type="text" formControlName="name">
+                </div>
+                <div class="form-group form-group1">
+                    <label class="form-label" for="email">Email: </label>
+                    <input id="email" class="form-control" type="email" formControlName="email">
+                </div>
+                <div class="form-group form-group1">
+                    <label class="form-label" for="course">Course: </label>
+                    <input  id="course" class="form-control" type="text" formControlName="course">
+                </div>
+                <div class="form-group form-group1">
+                    <label class="form-label" for="fee">Fee: </label>
+                    <input  id="fee" class="form-control" type="number" formControlName="fee">
+                </div>
+                <div class="row text-center">
+                    <div class="form-group col-md-5">
+                        <button class="btn btn-primary" (click)="createData()">Add</button>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <button class="btn btn-danger" (click)="close()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-12">
+            <button class="btn btn-success btnAdd" (click)="showInputs()"> {{btnAdd}} </button>
+        </div>
+    </div>
+    
+    <div class="row row1 tablerow justify-content-center">
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Fee</th>
+                <th colspan="2" style="padding-left: 60px;">Actions
+                    <!-- <button class="btn btn-primary btnRefresh" (click)="getData()">Refresh Data</button> -->
+                </th>
+            </tr>
+            <tr *ngFor="let showData of showData">
+                <td>{{showData.id}}</td>
+                <td>{{showData.name}}</td>
+                <td>{{showData.email}}</td>
+                <td>{{showData.course}}</td>
+                <td>{{showData.fee | currency:"INR"}}</td>
+                <td>
+                    <button class="btn btnEdit" (click)="editData(showData.id)">Edit</button>
+                </td>
+                <td>
+                    <button class="btn btnDelete"   (click)="deleteData(showData.id)">Delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

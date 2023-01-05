@@ -4,3 +4,9 @@ export class Student{
     course: string;
     gender: string;
 }
+export class Stud{
+    name: string;
+    email: string;
+    course: string;
+    fee: number;
+}
